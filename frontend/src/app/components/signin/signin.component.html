@@ -1,0 +1,27 @@
+<h1 style="text-align: center;">
+  SignIn 
+</h1>
+<form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+  <div>
+    <p>
+      <mat-form-field appearance="outline">
+      <mat-label>Enter your email address</mat-label>
+      <input matInput placeholder="Email address" formControlName="email">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input matInput placeholder="Password" formControlName="password" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <button mat-flat-button color="primary" type="submit" >Sign in</button>
+    </p>
+
+  </div>
+</form>
