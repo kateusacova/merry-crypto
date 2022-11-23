@@ -10,15 +10,15 @@
   <p>
     <mat-form-field appearance="outline">
       <mat-label>Enter your password</mat-label>
-      <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <input matInput placeholder="Password" [type]="passwordHide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="passwordHide = !passwordHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
+        <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
   </p>
   
   <p>
-    <button mat-flat-button color="primary">Sign in</button>
+    <button mat-flat-button color="primary" (click)="login()" >Sign in</button>
   </p>
   
 </div>
